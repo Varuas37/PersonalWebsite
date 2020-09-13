@@ -28,11 +28,11 @@ const Portfolio = (handleOpen) => {
           <Window
             style={{
               width: "40%",
+              minWidth: "fit-content",
               height: "fit-content",
-
               position: "absolute",
-              left: "10%",
-              top: "10%",
+              left: "5%",
+              top: "5%",
               overflowY: "auto",
             }}
           >
