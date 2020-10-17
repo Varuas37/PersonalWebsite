@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 
 import { styleReset, List, ListItem, Divider } from "react95";
@@ -14,6 +14,7 @@ import {
   useParams,
 } from "react-router-dom";
 import Profile from "./Components/layout/Profile/Profile";
+
 // original Windows95 font (optionally)
 
 const GlobalStyles = createGlobalStyle`
@@ -23,15 +24,22 @@ const GlobalStyles = createGlobalStyle`
   }
   ${styleReset}
 `;
-// S
-const App = () => (
+const si = require('systeminformation');
+
+
+const App = () => {
+
+  
+
+  return(
   <Router>
     <GlobalStyles />
     <ThemeProvider theme={original}>
       <StartMenu> </StartMenu>
       <Switch></Switch>
+      
     </ThemeProvider>
   </Router>
-);
+)};
 
 export default App;

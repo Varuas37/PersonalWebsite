@@ -15,7 +15,8 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "react95": "^3.0.1",
-    "styled-components": "^5.2.0"
+    "styled-components": "^5.2.0",
+    "systeminformation": "^4.27.10"
   },
   "scripts": {
     "start": "react-scripts start",

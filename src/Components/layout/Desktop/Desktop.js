@@ -1,11 +1,40 @@
-import React, { Fragment } from "react";
+import React, { Fragment,useState,useEffect } from "react";
 import "./Desktop.css";
 import Icons from "./Icons";
 import Draggable from "react-draggable";
+import OutsideAlerter from "../OutsideClick/OutsideClick";
+import CustomBox from "../CustomRightClick/CustomBox";
+import { Cutout } from "react95";
 const iconUser = require("../Assets/userIcon.png");
 const iconNetwork = require("../Assets/network.png");
 
 const Desktop = () => {
+  const [custombox,setCustomBox] = useState({
+    visible:false,
+    x:0,
+    y:0
+  })
+
+
+  // For Custom right click options. 
+  useEffect(() => {
+    // Update the document title using the browser API
+    if (document.addEventListener) {
+      document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        const clickX = e.clientX;
+        const clickY = e.clientY;
+        setCustomBox({visible:true,x:clickX,y:clickY})
+      }, false);
+
+
+      } else {
+      document.attachEvent('oncontextmenu', function() {
+        alert("You've tried to open context menu");
+        window.event.returnValue = false;
+      });
+      }
+  });
   return (
     <Fragment>
       <div className="desktop-applications">
@@ -16,7 +45,10 @@ const Desktop = () => {
         <a href="https://twitter.com/spanthee07" target="_blank">
           <Icons icon={iconUser} text="Twitter"></Icons>
         </a>
+       
       </div>
+     { custombox.visible? <OutsideAlerter><CustomBox x={custombox.x} y={custombox.y} visible={custombox.visible}></CustomBox></OutsideAlerter> :null}
+      
     </Fragment>
   );
 };
