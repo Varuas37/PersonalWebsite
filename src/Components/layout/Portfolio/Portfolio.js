@@ -58,7 +58,9 @@ const Portfolio = (handleOpen) => {
               <TabBody style={{ height: "fit-content", minHeight: "100%" }}>
                 {activeTab === 0 && (
                   <div>
+                    <a href="https://github.com/Varuas37/waves">
                     <Fieldset label="MERN Stack ❤️">Libri</Fieldset>
+                      </a>
                     <br></br>
                     <Fieldset label="Data Structures 📚">
                       <p>Sorting Algorithms</p>
@@ -68,7 +70,7 @@ const Portfolio = (handleOpen) => {
                 )}
                 {activeTab === 1 && (
                   <div>
-                    <div>I will soon update this list</div>
+                    <a href="https://guarded-spire-09619.herokuapp.com/">Canvas Comment</a>
                   </div>
                 )}
                 {activeTab === 2 && (

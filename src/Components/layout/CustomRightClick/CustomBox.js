@@ -29,8 +29,8 @@ export default function CustomBox({ x,y,visible }) {
         <ListItem size="sm" style={{cursor: "pointer"}}>View</ListItem>
         <Divider />
         <ListItem size="sm" style={{cursor: "pointer"}} >Refresh</ListItem>
-        <ListItem size="sm" style={{cursor: "pointer"}} >View PortFolio</ListItem>
-        <ListItem size="sm" style={{cursor: "pointer"}} >Projects</ListItem>
+        <ListItem size="sm" style={{cursor: "pointer"}}>Github</ListItem>
+        <ListItem size="sm" style={{cursor: "pointer"}} >LinkedIn</ListItem>
         <Divider />
         <ListItem size="sm" style={{cursor: "pointer"}}>Properties</ListItem>
       </List>
