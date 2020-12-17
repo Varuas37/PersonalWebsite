@@ -1,0 +1,36 @@
+.window{
+    
+    display:flex;
+    /* flex-wrap: wrap; */
+    background-color: gray;
+    
+    /* height:400px; */
+  /* width:fit-content; */
+  /* flex-wrap: wrap; */
+    z-index:500;
+}
+.board{
+    
+    
+    /* flex-wrap: wrap; */
+    background-color: gray;
+   
+    /* height:400px; */
+  /* width:fit-content; */
+  /* flex-wrap: wrap; */
+    
+}
+.minesweeperWindow{
+    position: absolute;
+    top : 100px;
+    width:2100px,
+
+}
+.window-header{
+    display: flex;
+    flex-direction:row;
+    justify-content:space-between;
+}
+.close-icon{
+    margin:20px;
+}

@@ -1,0 +1,88 @@
+@font-face{
+    font-family: "Cascadia";
+    src:url("./assets/font/cascadia-code/Cascadia.ttf")
+}
+
+*{
+    font-family: "MS Sans Serif";
+}
+
+.terminalText {
+    font-family: "Cascadia";
+    color: white;
+    font-size: 14px;
+}
+
+
+  .App {
+    text-align: center;
+  }
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .cellStyle {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: 800;
+  }
+  
+  #gameOverImage {
+    opacity: 100;
+    z-index: 4;
+    height: 70%;
+    max-width: 100%;
+    margin: 0 50px;
+    background: url("https://www.google.com/logos/fnbx/minesweeper/lose_screen.png")
+      0px 80px no-repeat;
+    background-repeat: repeat-x;
+    position: relative;
+    padding-top: 20px;
+  }
+  
+  .tryAgain {
+    cursor: pointer;
+    margin: 0 50px;
+    border-radius: 7px;
+    background: darkgreen;
+    color: rgb(158, 255, 158);
+    padding: 10px;
+    font-weight: 700;
+  }

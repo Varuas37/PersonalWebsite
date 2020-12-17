@@ -12,11 +12,13 @@ import {
 } from "react95";
 import moment from "moment";
 import Clock from "react-live-clock";
-
+import "./StartMenu.css";
 import DateTime from "../DateTime/DateTime";
 import Profile from "../Profile/Profile";
 import Portfolio from "../Portfolio/Portfolio";
 import Desktop from "../Desktop/Desktop";
+import Minesweeper from "../../Apps/Minesweeper/Minesweeper";
+import StartMenuBar from "../StartMenuBar/StartMenuBar";
 const iconWindow = require("../Assets/windows.png");
 const StartMenu = (props) => {
   const [open, setOpen] = useState(false);
@@ -26,16 +28,8 @@ const StartMenu = (props) => {
   return (
     <Fragment>
       <div className="startMenu">
-        <div
-          style={{
-            height: "96vh",
-            backgroundColor: "#268080",
-            overflow: "none",
-            overflowY: "hidden",
-            overflowX: "hidden",
-          }}
-        >
-          <Desktop></Desktop>
+        <div style={{}}>
+            <Minesweeper></Minesweeper>
           {openProfile ? <Profile handleOpen={setOpenProfile}></Profile> : null}
           {openPortFolio ? (
             <Portfolio handleOpen={setOpenPortFolio}></Portfolio>
@@ -74,44 +68,13 @@ const StartMenu = (props) => {
                 Start
               </Button>
               {open && (
-                <List
-                  style={{
-                    position: "absolute",
-                    left: "0",
-                    bottom: "20%",
-                  }}
-                  onClick={() => setOpen(false)}
-                >
-                  <div>
-                    <ListItem
-                      style={{ cursor: "pointer" }}
-                      onClick={() => setOpenProfile(!openProfile)}
-                    >
-                      <span role="img" aria-label="👨‍💻">
-                        👨‍💻
-                      </span>
-                      Profile
-                    </ListItem>
-
-                    <ListItem
-                      style={{ cursor: "pointer" }}
-                      onClick={() => setOpenPortFolio(!openPortFolio)}
-                    >
-                      <span role="img" aria-label="📁">
-                        📁
-                      </span>
-                      Portfolio
-                    </ListItem>
-
-                    <Divider />
-                    <ListItem style={{ cursor: "pointer" }}>
-                      <span role="img" aria-label="🔙">
-                        ❌
-                      </span>
-                      Close
-                    </ListItem>
-                  </div>
-                </List>
+                <StartMenuBar
+                  setOpen={setOpen}
+                  setOpenProfile={setOpenProfile}
+                  openProfile={openProfile}
+                  setOpenPortFolio={setOpenPortFolio}
+                  openPortFolio={openPortFolio}
+                ></StartMenuBar>
               )}
             </div>
 

@@ -17,24 +17,24 @@ const Desktop = () => {
 
 
   // For Custom right click options. 
-  useEffect(() => {
-    // Update the document title using the browser API
-    if (document.addEventListener) {
-      document.addEventListener('contextmenu', function(e) {
-        e.preventDefault();
-        const clickX = e.clientX;
-        const clickY = e.clientY;
-        setCustomBox({visible:true,x:clickX,y:clickY})
-      }, false);
+  // useEffect(() => {
+  //   // Update the document title using the browser API
+  //   if (document.addEventListener) {
+  //     document.addEventListener('contextmenu', function(e) {
+  //       e.preventDefault();
+  //       const clickX = e.clientX;
+  //       const clickY = e.clientY;
+  //       setCustomBox({visible:true,x:clickX,y:clickY})
+  //     }, false);
 
 
-      } else {
-      document.attachEvent('oncontextmenu', function() {
-        alert("You've tried to open context menu");
-        window.event.returnValue = false;
-      });
-      }
-  });
+  //     } else {
+  //     document.attachEvent('oncontextmenu', function() {
+  //       alert("You've tried to open context menu");
+  //       window.event.returnValue = false;
+  //     });
+  //     }
+  // });
   return (
     <Fragment>
       <div className="desktop-applications">

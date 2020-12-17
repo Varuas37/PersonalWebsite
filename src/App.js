@@ -13,8 +13,13 @@ import {
   useRouteMatch,
   useParams,
 } from "react-router-dom";
+import "./App.css"
 import Profile from "./Components/layout/Profile/Profile";
-
+import Minesweeper from "./Components/Apps/Minesweeper/Minesweeper";
+import Desktop from "./Components/layout/Desktop/Desktop";
+import Model from "./Components/Models/Model";
+import { Helmet } from "react-helmet";
+import Terminal from "./Components/Apps/Terminal/Terminal";
 // original Windows95 font (optionally)
 
 const GlobalStyles = createGlobalStyle`
@@ -29,15 +34,19 @@ const si = require('systeminformation');
 
 const App = () => {
 
-  
-
   return(
   <Router>
     <GlobalStyles />
     <ThemeProvider theme={original}>
-      <StartMenu> </StartMenu>
+ 
+    <Minesweeper></Minesweeper>
+    {/* <Desktop></Desktop> */}
+      {/* <StartMenu> </StartMenu> */}
+   
+      {/* <Model></Model> */}
+      {/* <Terminal></Terminal> */}
       <Switch></Switch>
-      
+   
     </ThemeProvider>
   </Router>
 )};

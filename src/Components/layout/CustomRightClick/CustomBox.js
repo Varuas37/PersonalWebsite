@@ -4,7 +4,7 @@ import { List, ListItem, Divider } from "react95";
 
 
 export default function CustomBox({ x,y,visible }) {
-
+// Change this to visible, when you find out the solution . 
     const [visibleState,setVisible] = useState(visible)
     useEffect(() => {
         if (document.addEventListener) {
