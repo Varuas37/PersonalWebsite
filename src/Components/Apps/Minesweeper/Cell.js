@@ -1,27 +1,27 @@
 import React from "react";
 import { mineColor } from "./utils/mineColors";
+import {
 
+  Button,
+
+} from "react95";
 import Circle from "./Circle";
+import iconFlag from "./assets/Image/flag.png"
 
 export default function Cell({ details, updateFlag, revealCell }) {
-  const cellstyle = {
-    background: details.revealed
-      ? details.value === "X"
-        ? mineColor()
-        : bombChexPattern(details.x, details.y)
-      : chexPattern(details.x, details.y),
-    color: numColorCode(details.value),
-  };
-
   return (
-    <div
+    <Button active={details.revealed}
       onContextMenu={(e) => updateFlag(e, details.x, details.y)}
       onClick={() => revealCell(details.x, details.y)}
-      style={cellstyle}
-      className="cellStyle"
+    
+      style={{color:`${numColorCode(details.value)}`, fontWeight:"bold", minWidth:"30px", maxWidth:"30px",minHeight:"40px",maxHeight:"40px", background:`${details.revealed
+        ? details.value === "X"
+          ? "none"
+          : "#BDBDBD"
+        : "none"}`, margin:"0px"}}
     >
       {!details.revealed && details.flagged ? (
-        "🚩"
+        <img src={iconFlag} style={{height:"20px", width:"20px"}}></img>
       ) : details.revealed && details.value !== 0 ? (
         details.value === "X" ? (
           <Circle />
@@ -31,7 +31,7 @@ export default function Cell({ details, updateFlag, revealCell }) {
       ) : (
         ""
       )}
-    </div>
+    </Button>
   );
 }
 
@@ -61,18 +61,27 @@ const chexPattern = (x, y) => {
 
 const numColorCode = (num) => {
   if (num === 1) {
-    return "#1976d2";
+    return "blue";
   } else if (num === 2) {
-    return "#388d3c";
+    return "green";
   } else if (num === 3) {
-    return "#d33030";
+    return "red";
   } else if (num === 4) {
-    return "#7c21a2";
+    return "purple";
   } else if (num === 5) {
-    return "#1976d2";
+    return "peach";
   } else if (num === 6) {
-    return "#1976d2";
+    return "pink";
   } else {
     return "white";
   }
 };
+
+// const cellstyle = {
+//   background: details.revealed
+//     ? details.value === "X"
+//       ? mineColor()
+//       : bombChexPattern(details.x, details.y)
+//     : chexPattern(details.x, details.y),
+//   color: numColorCode(details.value),
+// };

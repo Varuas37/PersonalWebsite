@@ -1,5 +1,5 @@
 import React from "react";
-
+import iconMine from "./assets/Image/mine.png"
 export default function Circle() {
   return (
     <div
@@ -14,9 +14,13 @@ export default function Circle() {
           height: 23,
           width: 23,
           borderRadius: 20,
-          background: "rgba(0,0,0,0.4)",
+          // background: "red",
+          display:"flex",
+          justifyContent:"center",
         }}
-      ></div>
+      >
+        <img src={iconMine} style={{height:"20px", width:"20px"}}/> 
+      </div>
     </div>
   );
 }

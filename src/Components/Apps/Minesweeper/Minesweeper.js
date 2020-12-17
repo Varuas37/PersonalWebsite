@@ -15,7 +15,8 @@ import "./Minesweeper.css";
 import Cell from "./Cell";
 import Draggable from "react-draggable";
 import Timer from "./Timer";
-import Modal from "./Modal"
+
+import iconMinesweeper from "./assets/Image/iconMine.png"
 const Minesweeper = () => {  const [grid, setGrid] = useState([]);
   const [nonMineCount, setNonMineCount] = useState(0);
   const [mineLocations, setMineLocations] = useState([]);
@@ -83,7 +84,8 @@ const Minesweeper = () => {  const [grid, setGrid] = useState([]);
     <Draggable bounds="parent">
       <Window className="window" style={{width:`fit-content`}}>
         <WindowHeader className="window-header">
-          <span>Minesweeper</span>
+          
+        <span style={{display:"flex", alignContent:"center" ,gap:"10px"}}>  <img src={iconMinesweeper}/>Minesweeper</span>
           <Button>x</Button>
         </WindowHeader>
         <Toolbar>
@@ -101,7 +103,7 @@ const Minesweeper = () => {  const [grid, setGrid] = useState([]);
         <WindowContent style={{display:"flex", flexDirection:"column"}}>
         <Panel style={{display:"flex", flexDirection:"row", alignContent:"center",justifyContent:"space-between", padding:"10px"}}>
           
-        <Timer handleSmileyClick={handleSmileyClick}></Timer>
+        <Timer handleSmileyClick={handleSmileyClick} gameOver={gameOver} nonMineCount={nonMineCount}></Timer>
         </Panel>
           <Panel style={{padding:"20px"}}>
 
