@@ -24,6 +24,7 @@ import store from "./Redux/store"
 import Profile from "./Components/Apps/Profile/Profile";
 import Portfolio from "./Components/Apps/Portfolio/Portfolio";
 import Computer from "./Components/Page/Computer/Computer";
+import Home from "./Components/Page/Home/Home";
 // original Windows95 font (optionally)
 
 const GlobalStyles = createGlobalStyle`
@@ -43,14 +44,10 @@ const App = () => {
   <Router>
     <GlobalStyles />
     <ThemeProvider theme={original}>
-      <Computer></Computer>
-    {/* <Desktop >
-     <StartMenu> </StartMenu> 
-     <Minesweeper></Minesweeper>
-     <Terminal></Terminal>
-     <Profile></Profile>
-     <Portfolio></Portfolio>
-    </Desktop>     */}
+      <Switch>
+      <Route exact path="/" component={Home}/>
+      <Route exact path="/start" component={Computer}/>
+      </Switch>
     </ThemeProvider>
   </Router>
   </Provider>

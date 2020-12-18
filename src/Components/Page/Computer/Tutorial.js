@@ -9,15 +9,15 @@ import as from ""
 extend({ OrbitControls });
 
 
-// const Computer =()=>{
-//   const [model,setModel] = useState();
+const Computer =()=>{
+  const [model,setModel] = useState();
 
-//   useEffect(()=>{
-//     new GLTFLoader().load('../../../../public/scene.gltf',setModel);
-//     console.log(model);
-// })
-//   return null;
-// }
+  useEffect(()=>{
+    new GLTFLoader().load('../../../../public/scene.gltf',setModel);
+    console.log(model);
+})
+  return null;
+}
 
 const Controls = () => {
   const orbitRef = useRef();
