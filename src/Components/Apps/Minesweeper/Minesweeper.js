@@ -8,16 +8,19 @@ import {
   Toolbar,
   Panel,
 } from "react95";
-
 import createBoard from "./utils/createBoard"
 import {revealed} from "./utils/reveal"
 import "./Minesweeper.css";
 import Cell from "./Cell";
 import Draggable from "react-draggable";
 import Timer from "./Timer";
-
 import iconMinesweeper from "./assets/Image/iconMine.png"
-const Minesweeper = () => {  const [grid, setGrid] = useState([]);
+
+// REDUX
+import {connect} from "react-redux"
+
+import {closeMinesweeper} from "../../../Redux/action/applications"
+const Minesweeper = ({closeMinesweeper,minesweeper}) => {  const [grid, setGrid] = useState([]);
   const [nonMineCount, setNonMineCount] = useState(0);
   const [mineLocations, setMineLocations] = useState([]);
   const [gameOver, setGameOver] = useState(false);
@@ -27,7 +30,10 @@ const Minesweeper = () => {  const [grid, setGrid] = useState([]);
     // Creating a board
 
     // Calling the function
-    freshBoard();
+    if(minesweeper){
+      freshBoard();
+    }
+  
   }, []);
 
   const handleSmileyClick =()=>{
@@ -79,14 +85,14 @@ const Minesweeper = () => {  const [grid, setGrid] = useState([]);
       }
     }
   };
-  return (
+  return minesweeper&&(
     <>
     <Draggable bounds="parent">
       <Window className="window" style={{width:`fit-content`}}>
         <WindowHeader className="window-header">
           
         <span style={{display:"flex", alignContent:"center" ,gap:"10px"}}>  <img src={iconMinesweeper}/>Minesweeper</span>
-          <Button>x</Button>
+          <Button onClick={()=>closeMinesweeper()}>x</Button>
         </WindowHeader>
         <Toolbar>
           <Button variant="menu" size="sm">
@@ -107,11 +113,6 @@ const Minesweeper = () => {  const [grid, setGrid] = useState([]);
         </Panel>
           <Panel style={{padding:"20px"}}>
 
-         
-         
-     
-
-        
           <div className="">
           {/* {gameOver && <Modal restartGame={restartGame} />} */}
         {grid.map((singleRow, index1) => {
@@ -140,5 +141,8 @@ const Minesweeper = () => {  const [grid, setGrid] = useState([]);
     </>
   );
 };
+const mapStateToProps=(state)=>({
+  minesweeper:state.applications.minesweeper
+})
 
-export default Minesweeper;
+export default connect(mapStateToProps,{closeMinesweeper})(Minesweeper);

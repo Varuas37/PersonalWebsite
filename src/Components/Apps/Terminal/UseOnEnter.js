@@ -1,12 +1,14 @@
 import React ,{useState} from "react"
 
 const commands ={
-    help:"quit: exit the applicaiton , clear: clears the text",
+    help:"quit: exit the applicaiton , clear: clears the text, cd_dir: Please make sure to include the _ after cd",
     quit:"Qutting the application",
     open:"",
     folderStructure:{
         currentpath:"home"
     },
+    ls:"Portfolio  Profile  Minesweeper  Github  Twitter  Document  Help  Shutdown  Programs",
+    cd_Document:"resume.pdf",
     clear:"clear"
 }
 

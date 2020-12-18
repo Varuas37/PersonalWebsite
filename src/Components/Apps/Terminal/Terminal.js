@@ -6,18 +6,31 @@ import iconConsole from "./iconConsole.png"
 import iconClose from "./iconClose.png"
 import UseOnEnter from "./UseOnEnter.js";
 import MapConsoleOutput from "./MapConsoleOutput.js";
-const Terminal = (props) => {
+import Draggable from "react-draggable";
+
+import {connect} from "react-redux"
+
+import {closeTerminal} from "../../../Redux/action/applications"
+
+
+const Terminal = ({closeTerminal,terminal}) => {
   const inputText = useRef();
   const [consoleOutput, onEnter] = UseOnEnter();
+
   useEffect(() => {
-    inputText.current.value = "";
-    inputText.current.focus();
+    if(terminal){
+      inputText.current.value = "";
+      inputText.current.focus();
+    }
   });
-  return (
+
+
+  return terminal&&(
+    <Draggable bounds="parent" >
     <Window>
       <WindowHeader className='window-header'>
       <span style={{display:"flex", alignContent:"center" ,gap:"10px"}}>  <img src={iconConsole}/>SP-DOS Prompt</span>
-      <Button>
+      <Button onClick={()=>closeTerminal()}>
         <img src={iconClose}/>
       </Button>
     </WindowHeader>
@@ -89,9 +102,14 @@ const Terminal = (props) => {
         </Cutout>
       </WindowContent>
     </Window>
+    </Draggable>
   );
 };
 
 Terminal.propTypes = {};
 
-export default Terminal;
+const mapStateToProps=(state)=>({
+  terminal:state.applications.terminal
+})
+
+export default connect(mapStateToProps,{closeTerminal})(Terminal);

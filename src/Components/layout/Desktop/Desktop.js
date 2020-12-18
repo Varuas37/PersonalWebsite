@@ -5,10 +5,11 @@ import Draggable from "react-draggable";
 import OutsideAlerter from "../OutsideClick/OutsideClick";
 import CustomBox from "../CustomRightClick/CustomBox";
 import { Cutout } from "react95";
+import { Children } from "react";
 const iconUser = require("../Assets/userIcon.png");
 const iconNetwork = require("../Assets/network.png");
 
-const Desktop = () => {
+const Desktop = ({children}) => {
   const [custombox,setCustomBox] = useState({
     visible:false,
     x:0,
@@ -48,7 +49,7 @@ const Desktop = () => {
        
       </div>
      { custombox.visible? <OutsideAlerter><CustomBox x={custombox.x} y={custombox.y} visible={custombox.visible}></CustomBox></OutsideAlerter> :null}
-      
+      {children}
     </Fragment>
   );
 };

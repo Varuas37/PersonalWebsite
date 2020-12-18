@@ -1,0 +1,25 @@
+.profile-Heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  padding: 15px;
+}
+.ph-intro,
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+.heading {
+  font-size: larger;
+  font-weight: bolder;
+}
+.sub-heading {
+  font-size: large;
+  font-weight: 600;
+}
+.skills {
+  padding: 15px;
+}

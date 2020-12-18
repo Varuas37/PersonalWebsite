@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { } from "react";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 
-import { styleReset, List, ListItem, Divider } from "react95";
-// pick a theme of your choice
+import { styleReset } from "react95";
+
 import original from "react95/dist/themes/original";
 import StartMenu from "./Components/layout/StartMenu/StartMenu";
 import {
@@ -13,13 +13,17 @@ import {
   useRouteMatch,
   useParams,
 } from "react-router-dom";
-import "./App.css"
-import Profile from "./Components/layout/Profile/Profile";
-import Minesweeper from "./Components/Apps/Minesweeper/Minesweeper";
+
 import Desktop from "./Components/layout/Desktop/Desktop";
-import Model from "./Components/Models/Model";
-import { Helmet } from "react-helmet";
+import Minesweeper from "./Components/Apps/Minesweeper/Minesweeper";
 import Terminal from "./Components/Apps/Terminal/Terminal";
+import "./App.css"
+//Redux
+import {Provider} from 'react-redux';
+import store from "./Redux/store"
+import Profile from "./Components/Apps/Profile/Profile";
+import Portfolio from "./Components/Apps/Portfolio/Portfolio";
+import Computer from "./Components/Page/Computer/Computer";
 // original Windows95 font (optionally)
 
 const GlobalStyles = createGlobalStyle`
@@ -35,20 +39,21 @@ const si = require('systeminformation');
 const App = () => {
 
   return(
+    <Provider store={store}>
   <Router>
     <GlobalStyles />
     <ThemeProvider theme={original}>
- 
-    <Minesweeper></Minesweeper>
-    {/* <Desktop></Desktop> */}
-      {/* <StartMenu> </StartMenu> */}
-   
-      {/* <Model></Model> */}
-      {/* <Terminal></Terminal> */}
-      <Switch></Switch>
-   
+      <Computer></Computer>
+    {/* <Desktop >
+     <StartMenu> </StartMenu> 
+     <Minesweeper></Minesweeper>
+     <Terminal></Terminal>
+     <Profile></Profile>
+     <Portfolio></Portfolio>
+    </Desktop>     */}
     </ThemeProvider>
   </Router>
+  </Provider>
 )};
 
 export default App;
