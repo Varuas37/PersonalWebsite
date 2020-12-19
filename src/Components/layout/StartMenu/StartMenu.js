@@ -18,8 +18,8 @@ const StartMenu = (props) => {
   const [openPortFolio, setOpenPortFolio] = useState(false);
 
   return (
-    <Fragment>
-      <div className="startMenu">
+
+      <footer className="startMenu">
    
         <AppBar
           style={{
@@ -72,8 +72,8 @@ const StartMenu = (props) => {
             </span>
           </Toolbar>
         </AppBar>
-      </div>
-    </Fragment>
+      </footer>
+
   );
 };
 export default StartMenu;

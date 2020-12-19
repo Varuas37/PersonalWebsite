@@ -25,7 +25,7 @@ const Portfolio = ({closePortfolio,portfolio}) => {
   const { activeTab } = state;
   return portfolio&&(
    
-      <Fragment>
+     
         <Draggable bounds="parent">
           <Window
             style={{
@@ -92,9 +92,7 @@ const Portfolio = ({closePortfolio,portfolio}) => {
               </TabBody>
             </WindowContent>
           </Window>
-        </Draggable>
-      </Fragment>
-    
+        </Draggable>    
   );
 };
 

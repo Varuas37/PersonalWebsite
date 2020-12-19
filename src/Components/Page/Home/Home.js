@@ -22,9 +22,11 @@ function Home({computerOpen}) {
       }
 
     return (
-        <div>
+        <div style={{width:"100%", height:"100vh"}}>
             <Desktop>
-                <StartMenu/>
+             
+            </Desktop>
+            <StartMenu/>
                 <Minesweeper/>
                 <Terminal/>
                 <Profile/>
@@ -33,7 +35,6 @@ function Home({computerOpen}) {
                 <Settings/>
                 <PdfDocument/>
                 <WindowsExplorer/>
-            </Desktop>
         </div>
     )
 } 
