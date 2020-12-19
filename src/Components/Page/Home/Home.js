@@ -6,8 +6,17 @@ import Terminal from '../../Apps/Terminal/Terminal'
 import Minesweeper from '../../Apps/Minesweeper/Minesweeper'
 import Profile from '../../Apps/Profile/Profile'
 import Portfolio from '../../Apps/Portfolio/Portfolio'
+import {connect} from "react-redux"
 
-function Home(props) {
+import { Link, Redirect } from "react-router-dom";
+
+
+function Home({computerOpen}) {
+
+    if (!computerOpen) {
+        return <Redirect to="/start" />;
+      }
+
     return (
         <div>
             <Desktop>
@@ -22,8 +31,12 @@ function Home(props) {
     )
 } 
 Home.propTypes = {
-
+    computerOpen : PropTypes.bool.isRequired,
 }
 
-export default Home
-
+const mapStateToProps=(state)=>({
+    computerOpen:state.computer.computerOpen
+  })
+  
+  export default connect(mapStateToProps,null)(Home);
+  

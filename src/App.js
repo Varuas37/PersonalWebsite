@@ -25,6 +25,7 @@ import Profile from "./Components/Apps/Profile/Profile";
 import Portfolio from "./Components/Apps/Portfolio/Portfolio";
 import Computer from "./Components/Page/Computer/Computer";
 import Home from "./Components/Page/Home/Home";
+import CustomSwitch from "./Components/layout/switch/CustomSwitch";
 // original Windows95 font (optionally)
 
 const GlobalStyles = createGlobalStyle`
@@ -47,6 +48,7 @@ const App = () => {
       <Switch>
       <Route exact path="/" component={Home}/>
       <Route exact path="/start" component={Computer}/>
+      <CustomSwitch/>
       </Switch>
     </ThemeProvider>
   </Router>

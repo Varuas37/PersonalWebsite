@@ -4,7 +4,12 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"
 import { Canvas, extend, useThree,useFrame } from "react-three-fiber"
 import { useSpring, a } from "react-spring/three"
-import Typing from 'react-typing-animation';
+// import Typing from 'react-typing-animation';
+import {connect} from "react-redux"
+import { Link, Redirect } from "react-router-dom";
+import {openComputer} from "../../../Redux/action/computer"
+import PropTypes from 'prop-types'
+import CustomSwitch from "../../layout/switch/CustomSwitch"
 
 extend({ OrbitControls });
 
@@ -33,27 +38,33 @@ const Controls = () => {
   }
 
 
-function Model(handleClick) {
+function Model({openComputer}) {
     const [model,setModel] = useState();
    
     useEffect(()=>{
         let loader = new GLTFLoader();
         loader.load('/scene.gltf',setModel)
   })
-    return model ? <primitive object={model.scene}/> : null;
+    return model ? <> <primitive object={model.scene}/> </>:null;
 }
 
-const Computer = (props)=>{
+const Computer = ({computerOpen,openComputer})=>{
     const isBrowser = typeof window !== "undefined"
+    if (computerOpen) {
+      return <Redirect to="/" />;
+    }
 
   return (
     <>
-   
-       <h1 className="terminalText" style={{fontSize:"4em", textAlign:"center"}}>Welcome,  turn the computer on to get started</h1>
-       {/* <Typing.Backspace speed={200} /> */}
-       
-   
-   
+   <div style={{display:"flex", justifyContent:"center", alignContent:"center", flexDirection:"column", gap:"10px", padding:"20px", width:"100%"}}>
+     <CustomSwitch onClick={openComputer}>
+     <p className="terminalText" style={{fontSize:'2em'}}>Power on</p>
+     </CustomSwitch>
+     
+      </div>
+  
+
+      
       {isBrowser && (
         <>
       
@@ -63,18 +74,18 @@ const Computer = (props)=>{
             gl.shadowMap.enabled = true
             gl.shadowMap.type = THREE.PCFSoftShadowMap
           }}
+
+          style={{positon:"relative"}}
         >
           
-           <ambientLight intensity={1} />
+         <ambientLight intensity={1} />
           <spotLight position={[10, 25, 5]} penumbra={1} castShadow />
           {/* <fog attach="fog" args={["gray", 0, 5]} /> */}
           <Controls />
-         
-        
-       
           <Model/>
-          
+         
         </Canvas>
+       
         </>
       )}
     </>
@@ -82,9 +93,16 @@ const Computer = (props)=>{
 }
 
 Computer.propTypes = {
-
+  openComputer: PropTypes.func.isRequired,
 }
 
-export default Computer;
+const mapStateToProps=(state)=>({
+  computerOpen:state.computer.computerOpen
+  
+})
+
+export default connect(mapStateToProps,{openComputer})(Computer);
+
+
 
 // ../../../assets/3DAssets/scene.gltf

@@ -24,8 +24,10 @@ import {
   openSettings,
   openDocuments,
   openHelp,
-  openProgram
+  openProgram,
+
 } from "../../../Redux/action/applications";
+import {closeComputer} from "../../../Redux/action/computer"
 
 function StartMenuBar({
   setOpen,
@@ -38,6 +40,7 @@ function StartMenuBar({
   openDocuments,
   openHelp,
   openPrograms,
+  closeComputer,
 }) {
   const MenuWidth = "300px";
   const Liststyle = {
@@ -113,7 +116,7 @@ function StartMenuBar({
           <span style={{ paddingLeft: "5px" }}>Terminal</span>
         </ListItem>
         <Divider style={{ width: MenuWidth }} />
-        <ListItem style={Liststyle}>
+        <ListItem style={Liststyle} onClick={()=>closeComputer()}>
           <img src={iconShutDown} style={{ height: "24px", width: "24px" }} />
           <span style={{ paddingLeft: "5px" }}>ShutDown</span>
         </ListItem>
@@ -140,4 +143,4 @@ export default connect(mapStateToProps,{  openTerminal,
   openSettings,
   openDocuments,
   openHelp,
-  openProgram})(StartMenuBar);
+  openProgram,closeComputer})(StartMenuBar);

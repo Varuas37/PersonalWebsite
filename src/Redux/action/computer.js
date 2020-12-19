@@ -3,12 +3,12 @@ import {    OPEN_COMPUTER,
 } from "./types";
 
 
-export const openTerminal = ()=> dispatch=>{
+export const openComputer = ()=> dispatch=>{
     dispatch({
         type: OPEN_COMPUTER,
       });
 }
-export const closeTerminal = ()=> dispatch=>{
+export const closeComputer = ()=> dispatch=>{
     dispatch({
         type: CLOSE_COMPUTER,
       });
