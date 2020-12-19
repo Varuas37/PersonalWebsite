@@ -1,0 +1,12 @@
+.selectOptions{
+    z-index: 1000;  
+}
+.sideIcons:hover{
+    background-color: lightblue;
+    cursor:"pointer"
+}
+.resumeIcon:hover{
+    cursor: pointer;
+    background-color: lightblue;
+
+}

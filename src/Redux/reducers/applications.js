@@ -15,6 +15,8 @@ import {
   CLOSE_DOCUMENTS,
   OPEN_HELP,
   CLOSE_HELP,
+  OPEN_RESUME,
+  CLOSE_RESUME
 } from "../action/types";
 
 const initialState = {
@@ -26,6 +28,7 @@ const initialState = {
   settings: false,
   documents: false,
   help: false,
+  resume:false,
 };
 
 export default function (state = initialState, action) {
@@ -94,12 +97,12 @@ export default function (state = initialState, action) {
     case OPEN_DOCUMENTS:
       return {
         ...state,
-        document: true,
+        documents: true,
       };
     case CLOSE_DOCUMENTS:
       return {
         ...state,
-        document: false,
+        documents: false,
       };
     case OPEN_HELP:
       return {
@@ -111,6 +114,16 @@ export default function (state = initialState, action) {
         ...state,
         help: false,
       };
+      case OPEN_RESUME:
+        return {
+          ...state,
+          resume: true,
+        };
+      case CLOSE_RESUME:
+        return {
+          ...state,
+          resume: false,
+        };
     default:
       return state;
   }

@@ -1,6 +1,6 @@
 import React, { Fragment,useState,useEffect } from "react";
 import "./Desktop.css";
-import Icons from "./Icons";
+import Icons from "../Icons/Icons";
 import Draggable from "react-draggable";
 import OutsideAlerter from "../OutsideClick/OutsideClick";
 import CustomBox from "../CustomRightClick/CustomBox";

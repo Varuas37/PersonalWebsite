@@ -33,3 +33,9 @@ export const CLOSE_HELP = "CLOSE_HELP"
 
 export const OPEN_COMPUTER = "OPEN_COMPUTER";
 export const CLOSE_COMPUTER = "CLOSE_COMPUTER";
+
+
+// FILES
+
+export const OPEN_RESUME = "OPEN_RESUME";
+export const CLOSE_RESUME = "CLOSE_RESUME";

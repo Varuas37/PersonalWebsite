@@ -11,6 +11,7 @@ import iconDocuments from "../Assets/iconDocuments.png";
 import iconSettings from "../Assets/iconSettings.png";
 import iconProgram from "../Assets/iconProgram.png";
 import iconSideArrow from "../Assets/iconSideArro.png";
+import iconMinesweeper from "../Assets/iconMine.png"
 
 // REDUX
 import { connect } from "react-redux";
@@ -82,10 +83,10 @@ function StartMenuBar({
         </ListItem>
         <ListItem
           style={Liststyle}
-          onClick={() => openProgram()}
+          onClick={() => openMinesweeper()}
         >
-          <img src={iconProgram} style={{ height: "24px", width: "24px" }} />
-          <span style={{ paddingLeft: "5px" }}>Program</span>
+          <img src={iconMinesweeper} style={{ height: "24px", width: "24px" }} />
+          <span style={{ paddingLeft: "5px" }}>Minesweeper</span>
         </ListItem>
         <ListItem
           style={Liststyle}

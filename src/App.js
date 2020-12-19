@@ -18,6 +18,9 @@ import store from "./Redux/store"
 
 import Computer from "./Components/Page/Computer/Computer";
 import Home from "./Components/Page/Home/Home";
+import Help from "./Components/Apps/Help/Help";
+import WindowsExplorer from "./Components/Apps/Finder/WindowsExplorer";
+import PdfDocument from "./Components/layout/PdfDocument/PdfDocument";
 // original Windows95 font (optionally)
 
 const GlobalStyles = createGlobalStyle`

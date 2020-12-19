@@ -42,8 +42,8 @@ const Minesweeper = ({closeMinesweeper,minesweeper}) => {  const [grid, setGrid]
     
   }
   const freshBoard = () => {
-    const newBoard = createBoard(dim,dim+5, dim+5);
-    setNonMineCount(dim * (dim+5) - dim+5);
+    const newBoard = createBoard(10,15, 15);
+    setNonMineCount(10 * 15 - 15);
     setMineLocations(newBoard.mineLocation);
     setGrid(newBoard.board);
   };

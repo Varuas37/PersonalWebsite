@@ -9,6 +9,10 @@ import Portfolio from '../../Apps/Portfolio/Portfolio'
 import {connect} from "react-redux"
 
 import { Link, Redirect } from "react-router-dom";
+import Help from '../../Apps/Help/Help'
+import Settings from '../../Apps/Settings/Settings'
+import WindowsExplorer from '../../Apps/Finder/WindowsExplorer'
+import PdfDocument from '../../layout/PdfDocument/PdfDocument'
 
 
 function Home({computerOpen}) {
@@ -25,7 +29,10 @@ function Home({computerOpen}) {
                 <Terminal/>
                 <Profile/>
                 <Portfolio/>
-
+                <Help/>
+                <Settings/>
+                <PdfDocument/>
+                <WindowsExplorer/>
             </Desktop>
         </div>
     )

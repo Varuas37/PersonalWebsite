@@ -1,0 +1,22 @@
+.desktop-icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+    height:"fit-content";
+    width:"fit-content";
+    cursor: pointer;
+  }
+
+.desktop-icons:hover{
+  background-color: lightblue;
+}
+  
+  .desktop-icons p {
+    font-size: 1em;
+    color: white;
+    margin: 0;
+    padding: 0;
+  }
+  

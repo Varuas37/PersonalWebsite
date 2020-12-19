@@ -16,8 +16,9 @@ import {OPEN_TERMINAL,
     CLOSE_HELP,
     OPEN_PROGRAM,
     CLOSE_PROGRAM,
-    OPEN_COMPUTER,
-    CLOSE_COMPUTER
+    OPEN_RESUME,
+    CLOSE_RESUME,
+  
 } from "./types";
 
     // TERMMINAL
@@ -121,4 +122,15 @@ export const closeHelp = ()=> dispatch=>{
       });
 }
 
-// COMPUTER
+// RESUME
+export const openResume = ()=> dispatch=>{
+    dispatch({
+        type: OPEN_RESUME,
+      });
+}
+export const closeResume = ()=> dispatch=>{
+    dispatch({
+        type: CLOSE_RESUME,
+      });
+}
+

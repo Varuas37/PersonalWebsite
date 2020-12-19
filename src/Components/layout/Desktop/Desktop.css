@@ -5,19 +5,3 @@
   width: fit-content;
 }
 
-.desktop-icons {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-content: center;
-  align-items: center;
-
-  cursor: pointer;
-}
-
-.desktop-icons p {
-  font-size: 1em;
-  color: white;
-  margin: 0;
-  padding: 0;
-}
