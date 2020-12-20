@@ -49,16 +49,24 @@ function Model({openComputer}) {
 }
 
 const Computer = ({computerOpen,openComputer})=>{
+  const [text,setText]= useState("Power on")
     const isBrowser = typeof window !== "undefined"
     if (computerOpen) {
       return <Redirect to="/" />;
+    }
+    useEffect=(()=>{
+      
+    })
+    const handleClick=()=>{
+      setText("Starting the PC")
+      openComputer();
     }
 
   return (
     <>
    <div style={{display:"flex", justifyContent:"center", alignContent:"center", flexDirection:"column", gap:"10px", padding:"20px", width:"100%"}}>
-     <CustomSwitch onClick={openComputer}>
-     <p className="terminalText" style={{fontSize:'2em'}}>Power on</p>
+     <CustomSwitch onClick={handleClick}>
+     <p className="terminalText" style={{fontSize:'2em'}}>{text}</p>
      </CustomSwitch>
      
       </div>

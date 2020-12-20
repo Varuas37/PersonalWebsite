@@ -19,6 +19,8 @@ import "./Finder.css";
 import {connect} from "react-redux";
 import {openResume,closeDocuments} from "../../../Redux/action/applications"
 const SideIcons = ({ image, text,openResume }) => {
+
+ 
   return (
     <div
       className="sideIcons"
@@ -45,7 +47,11 @@ function WindowsExplorer({openResume,resume,documents,closeDocuments}) {
     // { value: 5, label: 'Resume' },
   ];
   const onChange = (evt, nextSelection) => console.log(evt, nextSelection);
-
+  const handleResume=()=>{
+    closeDocuments();
+    openResume();
+   
+  }
   return documents && (
     <>
       <Draggable bounds="parent">
@@ -116,7 +122,7 @@ function WindowsExplorer({openResume,resume,documents,closeDocuments}) {
                   cursor:"pointer",
                   padding:"5px"
                 }}
-                onClick={()=>openResume()}
+                onClick={handleResume}
                 className="resumeIcon"
               >
                 <img src={iconNotepad} alt="" height="50px" width="50px" />
