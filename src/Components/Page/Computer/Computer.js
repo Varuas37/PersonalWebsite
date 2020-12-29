@@ -54,9 +54,7 @@ const Computer = ({computerOpen,openComputer})=>{
     if (computerOpen) {
       return <Redirect to="/" />;
     }
-    useEffect=(()=>{
-      
-    })
+   
     const handleClick=()=>{
       setText("Starting the PC")
       openComputer();

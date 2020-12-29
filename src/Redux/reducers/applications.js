@@ -1,22 +1,30 @@
 import {
   OPEN_TERMINAL,
   CLOSE_TERMINAL,
+  MINIMIZE_TERMINAL,
   OPEN_MINESWEEPER,
   CLOSE_MINESWEEPER,
+  MINIMIZE_MINESWEEPER,
   OPEN_PORTFOLIO,
   CLOSE_PORTFOLIO,
+  MINIMIZE_PORTFOLIO,
   OPEN_PROFILE,
   CLOSE_PROFILE,
+  MINIMIZE_PROFILE,
   OPEN_NAVIGATION_MENU,
   CLOSE_NAVIGATION_MENU,
   OPEN_SETTINGS,
   CLOSE_SETTINGS,
+  MINIMIZE_SETTINGS,
   OPEN_DOCUMENTS,
   CLOSE_DOCUMENTS,
+  MINIMIZE_DOCUMENTS,
   OPEN_HELP,
   CLOSE_HELP,
+  MINIMIZE_HELP,
   OPEN_RESUME,
-  CLOSE_RESUME
+  CLOSE_RESUME,
+  MINIMIZE_RESUME,
 } from "../action/types";
 
 const initialState = {
@@ -28,7 +36,11 @@ const initialState = {
   settings: false,
   documents: false,
   help: false,
-  resume:false,
+  resume: false,
+  minimizedApplications: [{
+    icon:null,
+    name:null
+  }],
 };
 
 export default function (state = initialState, action) {
@@ -43,6 +55,11 @@ export default function (state = initialState, action) {
       return {
         ...state,
         terminal: false,
+      };
+    case MINIMIZE_TERMINAL:
+      return {
+        ...state,
+        minimizedApplications: false,
       };
     case OPEN_MINESWEEPER:
       return {
@@ -114,16 +131,16 @@ export default function (state = initialState, action) {
         ...state,
         help: false,
       };
-      case OPEN_RESUME:
-        return {
-          ...state,
-          resume: true,
-        };
-      case CLOSE_RESUME:
-        return {
-          ...state,
-          resume: false,
-        };
+    case OPEN_RESUME:
+      return {
+        ...state,
+        resume: true,
+      };
+    case CLOSE_RESUME:
+      return {
+        ...state,
+        resume: false,
+      };
     default:
       return state;
   }

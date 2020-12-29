@@ -1,9 +1,5 @@
 import React, { Fragment, useState } from "react";
-import {
-  AppBar,
-  Toolbar,
-  Button,
-} from "react95";
+import { AppBar, Toolbar, Button,List,ListItem,Divider } from "react95";
 
 import Clock from "react-live-clock";
 import "./StartMenu.css";
@@ -18,62 +14,69 @@ const StartMenu = (props) => {
   const [openPortFolio, setOpenPortFolio] = useState(false);
 
   return (
-
-      <footer className="startMenu">
-   
-        <AppBar
+    <footer className="startMenu">
+      <AppBar
+        style={{
+          position: "absolute",
+          bottom: "0px",
+          top: "94%",
+          margin: "0px",
+          padding: "0px",
+          // overflow: "none",å
+          // overflowY: "hidden",
+          // overflowX: "hidden",
+        }}
+      >
+        <Toolbar
           style={{
-            position: "absolute",
-            bottom: "0px",
-            top: "95%",
-            margin: "0px",
-            padding: "0px",
-            // overflow: "none",å
-            // overflowY: "hidden",
-            // overflowX: "hidden",
+            justifyContent: "space-between",
+            // gap: "10px",
+            // padding: "6px",
           }}
         >
-          <Toolbar
-            style={{
-              justifyContent: "flex-start",
-              gap: "10px",
-              padding: "6px",
-            }}
-          >
-            <div style={{ position: "relative", display: "inline-block" }}>
-              <Button
-                onClick={() => setOpen(!open)}
-                active={open}
-                style={{ fontWeight: "bold" }}
-              >
-                <img
-                  src={iconWindow}
-                  alt="react95 logo"
-                  style={{ height: "20px", marginRight: 4 }}
-                />
-                Start
-              </Button>
-              {open && (
-                <StartMenuBar
-                  setOpen={setOpen}
-                ></StartMenuBar>
-              )}
-            </div>
-
-            <span
-              style={{ position: "absolute", right: "10px", padding: "6px" }}
+          <div style={{ position: "relative", display: "inline-block",}}>
+            <Button
+              onClick={() => setOpen(!open)}
+              active={open}
+              style={{ fontWeight: "bold" }}
             >
-              <DateTime /> {"   "}
-              <Clock
-                format={"HH:mm:ss"}
-                ticking={true}
-                timezone={"US/Pacific"}
+              <img
+                src={iconWindow}
+                alt="react95 logo"
+                style={{ height: "20px", marginRight: 4 }}
               />
-            </span>
-          </Toolbar>
-        </AppBar>
-      </footer>
+              Start
+            </Button>
+            {open && <StartMenuBar setOpen={setOpen}></StartMenuBar>}
 
+           <span style={{marginLeft:"20px"}} >
+           {/* <Button
+              // onClick={() => setOpen(!open)}
+              active={true}
+              style={{ fontWeight: "bold" }}
+            >
+              <img
+                src={iconWindow}
+                alt="react95 logo"
+                style={{ height: "20px", marginRight: 4 }}
+              />
+              MineCraft
+            </Button> */}
+           </span>
+          </div>
+      
+          <div>
+    
+          </div>
+          <span style={{ }}>
+            <DateTime /> {"   "}
+            <Clock format={"HH:mm:ss"} ticking={true} timezone={"US/Pacific"} />
+          </span>
+        </Toolbar>
+      </AppBar>
+    </footer>
   );
 };
 export default StartMenu;
+
+// position: "absolute", right: "10px", padding: "6px" 

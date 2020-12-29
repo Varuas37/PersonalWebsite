@@ -1,23 +1,34 @@
 import {OPEN_TERMINAL,
     CLOSE_TERMINAL,
+    MINIMIZE_TERMINAL,
     OPEN_MINESWEEPER,
     CLOSE_MINESWEEPER,
+    MINIMIEZE_MINESWEEPER,
     OPEN_PORTFOLIO,
     CLOSE_PORTFOLIO,
+    MINIMIZE_PORTFOLIO,
     OPEN_PROFILE,
     CLOSE_PROFILE,
+    MINIMIZE_PROFILE,
     OPEN_NAVIGATION_MENU,
     CLOSE_NAVIGATION_MENU,
     OPEN_SETTINGS,
     CLOSE_SETTINGS,
+    MINIMIZE_SETTINGS,
     OPEN_DOCUMENTS,
     CLOSE_DOCUMENTS,
+    MINIMIZE_DOCUMENTS,
     OPEN_HELP,
     CLOSE_HELP,
+    MINIMIZE_HELP,
     OPEN_PROGRAM,
     CLOSE_PROGRAM,
+    MINIMIZE_PROGRAM,
     OPEN_RESUME,
     CLOSE_RESUME,
+    MINIMIZE_RESUME,
+    MINIMIZE_MINESWEEPER,
+
   
 } from "./types";
 
@@ -32,6 +43,11 @@ export const closeTerminal = ()=> dispatch=>{
         type: CLOSE_TERMINAL,
       });
 }
+export const minimizeTerminal = ()=> dispatch=>{
+    dispatch({
+        type: MINIMIZE_TERMINAL,
+      });
+}
 
 // MINESWEEPER
 export const openMinesweeper = ()=> dispatch=>{
@@ -42,6 +58,11 @@ export const openMinesweeper = ()=> dispatch=>{
 export const closeMinesweeper = ()=> dispatch=>{
     dispatch({
         type: CLOSE_MINESWEEPER,
+      });
+}
+export const minimizeMinesweeper = ()=> dispatch=>{
+    dispatch({
+        type: MINIMIZE_MINESWEEPER,
       });
 }
 // PORTFOLIO
@@ -55,6 +76,11 @@ export const closePortfolio= ()=> dispatch=>{
         type: CLOSE_PORTFOLIO,
       });
 }
+export const minimizePortfolio = ()=> dispatch=>{
+    dispatch({
+        type: MINIMIZE_PORTFOLIO,
+      });
+}
 // PROFILE
 export const openProfile = ()=> dispatch=>{
     dispatch({
@@ -66,6 +92,12 @@ export const closeProfile = ()=> dispatch=>{
         type: CLOSE_PROFILE,
       });
 }
+export const minimizeProfile = ()=> dispatch=>{
+    dispatch({
+        type: MINIMIZE_PROFILE,
+      });
+}
+
 // PROGRAM
 export const openProgram = ()=> dispatch=>{
     dispatch({
@@ -75,6 +107,11 @@ export const openProgram = ()=> dispatch=>{
 export const closeProgram = ()=> dispatch=>{
     dispatch({
         type: CLOSE_PROGRAM,
+      });
+}
+export const minimizeProgram = ()=> dispatch=>{
+    dispatch({
+        type: MINIMIZE_PROGRAM,
       });
 }
 // NAVIGATION MENU
@@ -99,6 +136,11 @@ export const closeSettings= ()=> dispatch=>{
         type: CLOSE_SETTINGS,
       });
 }
+export const minimizeSettings = ()=> dispatch=>{
+    dispatch({
+        type: MINIMIZE_SETTINGS,
+      });
+}
 // DOCUMENTS
 export const openDocuments = ()=> dispatch=>{
     dispatch({
@@ -108,6 +150,11 @@ export const openDocuments = ()=> dispatch=>{
 export const closeDocuments = ()=> dispatch=>{
     dispatch({
         type: CLOSE_DOCUMENTS,
+      });
+}
+export const minimizeDocuments = ()=> dispatch=>{
+    dispatch({
+        type: MINIMIZE_DOCUMENTS,
       });
 }
 // HELP
@@ -121,6 +168,11 @@ export const closeHelp = ()=> dispatch=>{
         type: CLOSE_HELP,
       });
 }
+export const minimizeHelp = ()=> dispatch=>{
+    dispatch({
+        type: MINIMIZE_HELP,
+      });
+}
 
 // RESUME
 export const openResume = ()=> dispatch=>{
@@ -131,6 +183,11 @@ export const openResume = ()=> dispatch=>{
 export const closeResume = ()=> dispatch=>{
     dispatch({
         type: CLOSE_RESUME,
+      });
+}
+export const minimizeResume = ()=> dispatch=>{
+    dispatch({
+        type: MINIMIZE_RESUME,
       });
 }
 

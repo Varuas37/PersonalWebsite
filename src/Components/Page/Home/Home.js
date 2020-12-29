@@ -17,7 +17,7 @@ import PdfDocument from '../../layout/PdfDocument/PdfDocument'
 
 function Home({computerOpen}) {
 
-    if (!computerOpen) {
+    if (computerOpen) {
         return <Redirect to="/start" />;
       }
 
