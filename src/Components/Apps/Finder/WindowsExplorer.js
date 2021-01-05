@@ -18,6 +18,7 @@ import Draggable from "react-draggable";
 import "./Finder.css";
 import {connect} from "react-redux";
 import {openResume,closeDocuments} from "../../../Redux/action/applications"
+import { Link } from "react-router-dom";
 const SideIcons = ({ image, text,openResume }) => {
 
  
@@ -79,9 +80,7 @@ function WindowsExplorer({openResume,resume,documents,closeDocuments}) {
             <Button variant="menu" size="sm">
               Edit
             </Button>
-            <Button variant="menu" size="sm" disabled>
-              Save
-            </Button>
+           
           </Toolbar>
           <div className="toolbar" style={{ padding: "10px", width: "800px" }}>
             <Select
@@ -111,7 +110,8 @@ function WindowsExplorer({openResume,resume,documents,closeDocuments}) {
                 backgroundColor: "white",
               }}
             >
-              <div
+              <Link
+              to="/resume"
                 style={{
                   display: "flex",
                   alignContent: "center",
@@ -122,12 +122,12 @@ function WindowsExplorer({openResume,resume,documents,closeDocuments}) {
                   cursor:"pointer",
                   padding:"5px"
                 }}
-                onClick={handleResume}
+               
                 className="resumeIcon"
               >
                 <img src={iconNotepad} alt="" height="50px" width="50px" />
                 <p style={{ color: "black" }}>Resume.pdf</p>     
-              </div>
+              </Link>
               
             </Cutout>
           </div>

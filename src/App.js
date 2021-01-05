@@ -43,6 +43,7 @@ const App = () => {
       <Switch>
       <Route exact path="/" component={Home}/>
       <Route exact path="/start" component={Computer}/>
+      <Route exact path="/resume" component={PdfDocument}/>
       </Switch>
     </ThemeProvider>
   </Router>

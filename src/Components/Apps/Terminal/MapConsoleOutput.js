@@ -1,5 +1,7 @@
 import React ,{useRef,useEffect}from "react";
 import Prompt from "./Prompt"
+// import {connect} from "react-redux"
+// import { closeTerminal } from "../../../Redux/action/applications";
 
 const MapConsoleOutput = ({consoleOutput})=>{
     const scrollRef = useRef()
@@ -16,7 +18,8 @@ const MapConsoleOutput = ({consoleOutput})=>{
         <div key={index} className="terminalText">
           
          { item.toLowerCase()=="clear"?null:<><Prompt /> <span >{item}</span></>}
-        
+         {/* { item.toLowerCase()=="exit"? closeTerminal():null} */}
+
         </div>
       ))}
     </div>

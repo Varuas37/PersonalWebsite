@@ -19,12 +19,13 @@ const StartMenu = (props) => {
         style={{
           position: "absolute",
           bottom: "0px",
-          top: "94%",
+          top: "95%",
           margin: "0px",
           padding: "0px",
           // overflow: "none",å
           // overflowY: "hidden",
           // overflowX: "hidden",
+          minHeight:"50px"
         }}
       >
         <Toolbar
@@ -32,6 +33,7 @@ const StartMenu = (props) => {
             justifyContent: "space-between",
             // gap: "10px",
             // padding: "6px",
+            
           }}
         >
           <div style={{ position: "relative", display: "inline-block",}}>
@@ -53,7 +55,20 @@ const StartMenu = (props) => {
            {/* <Button
               // onClick={() => setOpen(!open)}
               active={true}
-              style={{ fontWeight: "bold" }}
+              style={{ fontWeight: "bold" , marginRight:"10px" }}
+            >
+              <img
+                src={iconWindow}
+                alt="react95 logo"
+                style={{ height: "20px", marginRight: 4 }}
+              />
+              MineCraft
+            </Button>
+
+            <Button
+              // onClick={() => setOpen(!open)}
+              active={true}
+              style={{ fontWeight: "bold" , marginRight:"10px" }}
             >
               <img
                 src={iconWindow}
@@ -62,6 +77,9 @@ const StartMenu = (props) => {
               />
               MineCraft
             </Button> */}
+
+
+            
            </span>
           </div>
       

@@ -43,9 +43,10 @@ export const closeTerminal = ()=> dispatch=>{
         type: CLOSE_TERMINAL,
       });
 }
-export const minimizeTerminal = ()=> dispatch=>{
+export const minimizeTerminal = (icon,name,handleFunc)=> dispatch=>{
     dispatch({
         type: MINIMIZE_TERMINAL,
+        payload:[{icon:icon, name:name,handleFunc:handleFunc}]
       });
 }
 

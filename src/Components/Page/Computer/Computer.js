@@ -24,7 +24,7 @@ const Controls = () => {
   
     return (
       <orbitControls
-        autoRotate
+        // autoRotate
         // maxPolarAngle={Math.PI / 3}
         // minPolarAngle={Math.PI / 3}
         // maxAzimuthAngle = {[Math.PI/3,Math.PI/2]}

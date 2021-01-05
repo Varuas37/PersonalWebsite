@@ -25,7 +25,7 @@ const PdfDocument = ({resume,closeResume}) => {
   }
   return resume &&(
     <>
-    <Draggable bounds ="parent">
+    <Draggable>
       <Window className="window">
         <WindowHeader className="window-header">
           <span>Resume</span>
@@ -37,9 +37,9 @@ const PdfDocument = ({resume,closeResume}) => {
           <Button variant="menu" size="sm">
             File
           </Button>
-          <Button variant="menu" size="sm" onClick={()=> <Redirect to='/SauravResume.pdf' rel="noopener noreferrer" downloadable />}>
+          {/* <Button variant="menu" size="sm" onClick={()=> <Redirect to='/SauravResume.pdf' rel="noopener noreferrer" downloadable />}>
          Download
-          </Button>
+          </Button> */}
         </Toolbar>
         <WindowContent>
           <Panel variant="well" className="footer">

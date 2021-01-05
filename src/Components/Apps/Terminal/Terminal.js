@@ -22,6 +22,9 @@ const Terminal = ({closeTerminal,terminal}) => {
       inputText.current.value = "";
       inputText.current.focus();
     }
+    // if(consoleOutput=="exit"){
+    //   closeTerminal();
+    // }
   });
 
 

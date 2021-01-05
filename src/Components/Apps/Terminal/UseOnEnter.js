@@ -1,15 +1,15 @@
 import React ,{useState} from "react"
+import { closeTerminal } from "../../../Redux/action/applications";
+
 
 const commands ={
-    help:"quit: exit the applicaiton , clear: clears the text, cd_dir: Please make sure to include the _ after cd",
+    help:"quit: exit the applicaiton , clear: clears the text, cd: Goes inside the folder",
     quit:"Qutting the application",
-    open:"",
-    folderStructure:{
-        currentpath:"home"
-    },
     ls:"Portfolio  Profile  Minesweeper  Github  Twitter  Document  Help  Shutdown  Programs",
-    cd_Document:"resume.pdf",
-    clear:"clear"
+    "cd Document":"resume.pdf",
+    "cd Portfolio":"This Window contains my Portfolio",
+    clear:"clear",
+    exit:"Don't be lazy, click the cross icon."
 }
 
 const UseOnEnter = ()=>{
@@ -20,6 +20,7 @@ const UseOnEnter = ()=>{
           if (value.toLowerCase()=="clear"){
               updateConsoleOutput([]);
           }
+        
         const newConsoleLine = commands[value.toLowerCase()] || `invalid command: ${value}`;
         return updateConsoleOutput(consoleOutput =>
           consoleOutput.concat(newConsoleLine)

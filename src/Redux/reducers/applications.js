@@ -36,11 +36,12 @@ const initialState = {
   settings: false,
   documents: false,
   help: false,
-  resume: false,
-  minimizedApplications: [{
-    icon:null,
-    name:null
-  }],
+  resume: true,
+  // minimizedApplications: [{
+  //   icon:null,
+  //   name:null,
+  //   handleFunc:null
+  // }],
 };
 
 export default function (state = initialState, action) {
@@ -59,7 +60,7 @@ export default function (state = initialState, action) {
     case MINIMIZE_TERMINAL:
       return {
         ...state,
-        minimizedApplications: false,
+        minimizedApplications: payload,
       };
     case OPEN_MINESWEEPER:
       return {

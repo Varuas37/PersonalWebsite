@@ -95,13 +95,13 @@ function StartMenuBar({
           <img src={iconDocuments} style={{ height: "24px", width: "24px" }} />
           <span style={{ paddingLeft: "5px" }}>Documents</span>
         </ListItem>
-        <ListItem
+        {/* <ListItem
           style={Liststyle}
           onClick={() => openSettings()}
         >
           <img src={iconRun} style={{ height: "24px", width: "24px" }} />
           <span style={{ paddingLeft: "5px" }}>Settings</span>
-        </ListItem>
+        </ListItem> */}
         <ListItem
           style={Liststyle}
           onClick={() => openHelp()}

@@ -17,24 +17,25 @@ import PdfDocument from '../../layout/PdfDocument/PdfDocument'
 
 function Home({computerOpen}) {
 
-    if (computerOpen) {
+    if (!computerOpen) {
         return <Redirect to="/start" />;
       }
 
     return (
         <div style={{width:"100%", height:"100vh"}}>
-            <Desktop>
-             
-            </Desktop>
-            <StartMenu/>
-                <Minesweeper/>
+               
+                 <Desktop/>
+                 <Minesweeper/>
                 <Terminal/>
                 <Profile/>
                 <Portfolio/>
                 <Help/>
                 <Settings/>
-                <PdfDocument/>
-                <WindowsExplorer/>
+                <WindowsExplorer/>             
+               <div className="footer">
+               <StartMenu/>
+               </div>
+               
         </div>
     )
 } 
