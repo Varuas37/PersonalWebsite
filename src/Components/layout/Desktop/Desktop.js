@@ -8,6 +8,7 @@ import { Cutout } from "react95";
 import { Children } from "react";
 const iconUser = require("../Assets/userIcon.png");
 const iconNetwork = require("../Assets/network.png");
+const iconPortfolio = require("../Assets/iconPortfolio.png");
 
 const Desktop = ({children}) => {
   const [custombox,setCustomBox] = useState({
@@ -45,6 +46,10 @@ const Desktop = ({children}) => {
         <br />
         <a href="https://twitter.com/spanthee07" target="_blank">
           <Icons icon={iconUser} text="Twitter"></Icons>
+        </a>
+        <br/>
+        <a href="https://sauravpanthee.wixsite.com/portfolio" target="_blank">
+          <Icons icon={iconPortfolio} text="Portfolio"></Icons>
         </a>
        
       </div>

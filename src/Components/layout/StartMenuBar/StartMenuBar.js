@@ -66,13 +66,13 @@ function StartMenuBar({
       onClick={() => setOpen(false)}
     >
       <div>
-        <ListItem
+        {/* <ListItem
           style={Liststyle}
           onClick={() =>openProfile()}
         >
           <img src={iconUser} style={{ height: "24px", width: "24px" }} />
           <span style={{ paddingLeft: "5px" }}>Saurav Panthee</span>
-        </ListItem>
+        </ListItem> */}
 
         <ListItem
           style={Liststyle}
