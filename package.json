@@ -10,6 +10,7 @@
     "gsap": "^3.5.1",
     "moment": "^2.27.0",
     "react": "^16.13.1",
+    "react-device-detect": "^1.15.0",
     "react-dom": "^16.13.1",
     "react-draggable": "^4.4.3",
     "react-helmet": "^6.1.0",
@@ -33,7 +34,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "GENERATE_SOURCEMAP=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

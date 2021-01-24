@@ -94,12 +94,12 @@ const Terminal = ({
 		if (commandValues == 'close help') {
 			closeHelp();
 		}
-		if (commandValues == 'open programs') {
-			openProgram();
-		}
-		if (commandValues == 'close programs') {
-			closeProgram();
-		}
+		// if (commandValues == 'open programs') {
+		// 	openProgram();
+		// }
+		// if (commandValues == 'close programs') {
+		// 	closeProgram();
+		// }
 		if (commandValues == 'exit') {
 			closeTerminal();
 		}

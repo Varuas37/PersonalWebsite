@@ -19,7 +19,7 @@ const Desktop = ({ children }) => {
 		y: 0,
 	});
 
-	// For Custom right click options.
+	// // For Custom right click options.
 	// useEffect(() => {
 	//   // Update the document title using the browser API
 	//   if (document.addEventListener) {
@@ -36,7 +36,8 @@ const Desktop = ({ children }) => {
 	//       window.event.returnValue = false;
 	//     });
 	//     }
-	// });
+       
+	// },[custombox]);
 	return (
 		<Fragment>
 			<div className="desktop-applications">
@@ -56,11 +57,11 @@ const Desktop = ({ children }) => {
 					<Icons icon={iconResume} text="Resume"></Icons>
 				</Link>
 			</div>
-			{custombox.visible ? (
+			{custombox.visible && (
 				<OutsideAlerter>
 					<CustomBox x={custombox.x} y={custombox.y} visible={custombox.visible}></CustomBox>
 				</OutsideAlerter>
-			) : null}
+			)}
 			{children}
 		</Fragment>
 	);
