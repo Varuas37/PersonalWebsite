@@ -1,7 +1,7 @@
 import { OPEN_COMPUTER, CLOSE_COMPUTER } from "../action/types";
 
 const initialState = {
-  computerOpen: false,
+  computerOpen: true,
 };
 
 export default function (state = initialState, action) {

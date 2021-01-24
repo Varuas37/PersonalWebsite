@@ -64,6 +64,9 @@ const Portfolio = ({ closePortfolio, portfolio }) => {
 										<a href="https://guarded-spire-09619.herokuapp.com/" target="_blank">
 											Canvas Comment
 										</a>
+										<a href="https://sauravpanthee.wixsite.com/portfolio" target="_blank">
+											Automated Canvas
+										</a>
 									</Fieldset>
 									<br></br>
 									<Fieldset label="Data Structures 📚 (In Progress...)">
