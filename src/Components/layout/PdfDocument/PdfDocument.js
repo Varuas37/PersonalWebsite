@@ -23,13 +23,15 @@ const PdfDocument = ({resume,closeResume}) => {
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
   }
-  return resume &&(
+  return (
     <>
     <Draggable>
       <Window className="window">
         <WindowHeader className="window-header">
           <span>Resume</span>
-          <Button onClick={()=>closeResume()}>
+          <Button 
+          // onClick={()=>closeResume()}
+          >
             <span className="fas fa-times" />
           </Button>
         </WindowHeader>

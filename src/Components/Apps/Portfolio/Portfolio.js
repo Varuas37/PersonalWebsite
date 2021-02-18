@@ -61,13 +61,15 @@ const Portfolio = ({ closePortfolio, portfolio }) => {
 											Libri
 										</a>
 										<br />
+										<a href="https://canvas.spanthee.com" target="_blank">
+											Automated Canvas
+										</a>
+										<br />
 										<a href="https://guarded-spire-09619.herokuapp.com/" target="_blank">
 											Canvas Comment
 										</a>
-										<br />
-										<a href="https://sauravpanthee.wixsite.com/portfolio" target="_blank">
-											Automated Canvas
-										</a>
+									
+									
 									</Fieldset>
 									<br></br>
 									<Fieldset label="Data Structures 📚 (In Progress...)">
