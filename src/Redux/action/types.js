@@ -50,3 +50,19 @@ export const CLOSE_COMPUTER = "CLOSE_COMPUTER";
 export const OPEN_RESUME = "OPEN_RESUME";
 export const CLOSE_RESUME = "CLOSE_RESUME";
 export const MINIMIZE_RESUME = "MINIMIZE_RESUME";
+
+//GITHUB
+
+export const GET_REPOS = "GET_REPOS";
+export const GET_REPOS_ERR = "GET_REPOS_ERR";
+export const SET_CURR_REPO = "SET_CURR_REPO";
+export const SET_PATH = "SET_PATH";
+export const GO_BACK = "GO_BACK";
+export const GO_FORWARD = "GO_FORWARD";
+export const GITHUB_HOME = "GITHUB_HOME"
+
+
+export const GET_CODE = "GET_CODE";
+
+export const GET_CONTENT = "GET_CONTENT";
+export const GET_CONTENT_ERR ="GET_CONTENT_ERR";

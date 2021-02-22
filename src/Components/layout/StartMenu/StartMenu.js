@@ -23,7 +23,7 @@ const StartMenu = (props) => {
           margin: "0px",
           padding: "0px",
           // overflow: "none",å
-          // overflowY: "hidden",
+          // overflowY: "hidden",   
           // overflowX: "hidden",
           minHeight:"50px"
         }}
