@@ -56,10 +56,6 @@ const Repos = ({ data, setCurrRepo, insideRepo, setPath, currRepo }) => {
   }, [currRepo]);
 
   return (
-    // insideRepo && data.type === "file" ? (
-    //   <repoContents data={data} />
-    // ) :
-
     <div
       onDoubleClick={
         insideRepo && data.type === "file"

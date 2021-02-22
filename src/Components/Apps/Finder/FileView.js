@@ -41,8 +41,7 @@ function Example() {
   );
 }
 `.trim();
-  // ? () => setCurrRepo(data.name, true)
-  // : () => setPath(data.name)
+
   return (
     codeLoaded && (
       <div style={{width:"100%",overflowX:"hidden"}}>
